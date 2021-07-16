@@ -1,12 +1,20 @@
 @charset "utf-8";
 
-body{
+#home{
     background-color: red;
     background-image: url(../images/paprika.jpg);
     background-repeat: no-repeat;
     background-position:center top;
     background-size: cover;
     min-height: 100vh;
+}
+#tomato{
+    background-color: red;
+    background-image: url(../images/backgrond_tomato.jpg);
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size: cover;
+    min-height: 140px;
 }
 header{
     display: flex;
@@ -32,6 +40,10 @@ header{
     color: rgb(255, 255, 255)
 
 }
+.global-nav a{
+    color: aliceblue;
+    text-decoration: none;
+}
 main{
     text-align: center;
     margin-top: 1%;
@@ -47,4 +59,30 @@ footer{
     margin: 300px auto;
     font-size: 480px;
     color: rgb(255, 255, 255)
+}
+#tomato footer{
+    background-color:rgba(150,0,0,0.5);
+    text-align: center;
+    margin: 0 auto;
+    padding: 26px 0;
+}
+.wrapper{
+    
+    background-color: rgba(150, 0, 0, 0.5);
+    margin: 0px auto;
+    padding: 60px 0;
+}
+.profile-content{
+    display: flex;
+    justify-content: center;
+}
+.profile-txt{
+    width: 600px;
+    text-align: left;
+}
+.profile-txt span{
+    font-weight: bold;
+}
+.profile-image{
+    width: 800px;
 }
