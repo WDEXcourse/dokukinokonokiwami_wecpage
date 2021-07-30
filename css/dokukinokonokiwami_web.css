@@ -8,9 +8,25 @@
     background-size: cover;
     min-height: 100vh;
 }
+#papurika{
+    background-color: red;
+    background-image: url(../images/paprika.jpg);
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size: cover;
+    min-height: 140px;
+}
 #tomato{
     background-color: red;
     background-image: url(../images/backgrond_tomato.jpg);
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size: cover;
+    min-height: 140px;
+}
+#tougarasi{
+    background-color: red;
+    background-image: url(../images/shutterstock_352901618.jpeg);
     background-repeat: no-repeat;
     background-position:center top;
     background-size: cover;
@@ -85,4 +101,24 @@ footer{
 }
 .profile-image{
     width: 800px;
+}
+.papurika-content{
+    
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    margin-top: 6%;
+    margin-bottom: 50px;
+    
+}
+.item p{
+    font-weight: bold;
+}
+.item img{
+    width: 300px;
+}
+@media (min-width: 600px){
+    .papurika-content{
+        grid-template-columns: 1fr 1fr;
+    }
 }
