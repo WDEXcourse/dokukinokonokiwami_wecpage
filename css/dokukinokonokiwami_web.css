@@ -1,5 +1,6 @@
 @charset "utf-8";
-
+img { max-width:100%; height:auto; }
+.wf-hannari { font-family: "Hannari"; }
 #home{
     background-color: red;
     background-image: url(../images/paprika.jpg);
