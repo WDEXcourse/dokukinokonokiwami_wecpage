@@ -83,6 +83,8 @@ footer{
     margin: 0 auto;
     padding: 26px 0;
 }
+/* ここから上はweb.html */
+
 .wrapper{
     
     background-color: rgba(150, 0, 0, 0.5);
@@ -103,6 +105,7 @@ footer{
 .profile-image{
     width: 800px;
 }
+/* ここから上がトマトゾーン */
 .papurika-content{
     
     display: grid;
@@ -123,3 +126,4 @@ footer{
         grid-template-columns: 1fr 1fr;
     }
 }
+/* ここから上がパプリカゾーン */
