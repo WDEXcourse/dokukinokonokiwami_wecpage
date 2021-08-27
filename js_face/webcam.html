@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>顔モザイク</title>
+        <script src="camvas.js"></script>
+        <script src="pico.js"></script>
+    </head>
+    
+    <body>
+        <div>
+            <canvas id="canvas" width="640" height="480" ></canvas>
+         </div>
+         
+         <div style="display:none;">
+            <img id="mask" src="webcam_images/18448.png">
+         </div>
+         <script src="pico_webcam_sample.js"></script>
+         <input type="button" value="検出開始" onclick="fnc_callback(341, 512)">
+    </body>
+</html>
