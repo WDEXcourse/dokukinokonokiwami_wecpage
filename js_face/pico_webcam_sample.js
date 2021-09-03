@@ -35,16 +35,16 @@ var processfunc = function(video, dt) {
         "ldim": ncol
     }
     params = {
-        "shiftfactor": 0.1, 
+        "shiftfactor": 0.06, 
         "minsize": 100,       
-        "maxsize": 1000,     
-        "scalefactor": 1.1 
+        "maxsize": 10000,     
+        "scalefactor": 1.1
     }
 
     dets = pico.run_cascade(image, facefinder_classify_region, params);
     dets = update_memory(dets);
     dets = pico.cluster_detections(dets, 0.2);
-    qthresh = 50.0
+    qthresh = 10
   
     for(i=0; i<dets.length; ++i){
         if(dets[i][3]>qthresh)
