@@ -4,15 +4,19 @@
         <meta charset="UTF-8">
         <script src="./lib/face-api.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <link rel="stylesheet" href="facecss/face.css">
+        <link rel="stylesheet" href="./facecss/face.css">
     </head>
     <body>
         <title>顔認識ワイヤーフレーム</title>
-        <h1>ワイヤーフレーム</h1>
+        <div class="moji">
+            <h1>ワイヤーフレーム</h1>
+
+        </div>
+        
         <div  style="position: relative">
             <div class="parent">
-                <video id="video" onloadedmetadata="onPlay(this)"  muted autoplay width="640" height="480"></video>
-                <canvas id="facecanvas" style="  position: absolute;  top: 0; left: 0;" width="640s" height="480"></canvas>
+                <video id="video" onloadedmetadata="onPlay(this)"  style="position :absolute;  top: 0; "muted autoplay width="640" height="480"></video>
+                <canvas id="facecanvas" style="position :absolute;  top: 0; " width="640s" height="480"></canvas>
             </div>
         </div>
         <script>
