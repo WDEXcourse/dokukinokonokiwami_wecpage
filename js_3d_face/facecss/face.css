@@ -1,47 +1,72 @@
 @charset "utf-8";
-img { max-width:100%; height:auto; }
-.main{
-    text-align: center;
-    margin-top: 1%;
-    font-size: 42px;
-    
-}
-.body{
-    width: 100vw;
-    height: 100vh;
-    background-image:url(../images/haikei.jpg);
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.h1{
-    font-size: 142px;
-    /* color: #181818;; */
-    text-align:center;
+html {
+    background-color: #181818;
 }
-.moji{
-    font-size: 14px;
+
+head {
+    background-color: #181818;
+}
+
+main {
+    text-align: center;
+    margin-top: 1%;
+    font-size: 60px;
+    color: aliceblue
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #181818;
     color: #181818;
-    text-align:center;
+    background-image: url(../images/haikei.jpg);
 }
-.footer{
+
+.h1 {
+    font-size: 170px;
+    /* color: #181818;; */
+    text-align: center;
+    color: aliceblue;
+}
+
+.moji {
+    font-size: 14px;
+    color: aliceblue;
+    text-align: center;
+}
+
+footer {
     text-align: center;
     margin: 300px auto;
     font-size: 480px;
     color: #181818;
+    background-color: #181818;
 }
-.parent{
-    position :absolute;  
-    margin:0 auto; 
+
+.parent {
+    position: absolute;
+    margin: 0 auto;
     height: 480px;
     width: 640px;
-    top: 0; 
-    bottom:0;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
+    background-color: #181818;
 }
+
+
 /* #video{
     margin:0 auto; 
     width:100%
 } */
+
+
 /* #facecanvas{
     margin:0 auto; 
     width:640px;
