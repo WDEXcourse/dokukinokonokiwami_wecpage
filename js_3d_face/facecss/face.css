@@ -59,8 +59,23 @@ footer {
     right: 0;
     background-color: #181818;
 }
-
-
+button {
+    margin: 100px 0;
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    
+}
+.cover {
+    visibility: visible;   /* 表示 */
+}
+.h2{
+    color: aliceblue;
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    left: 400px;
+}
 /* #video{
     margin:0 auto; 
     width:100%

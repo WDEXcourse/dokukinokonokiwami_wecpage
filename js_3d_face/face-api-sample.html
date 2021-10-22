@@ -12,12 +12,44 @@
             <h1>ワイヤーフレーム</h1>
 
         </div>
-        
+        <style>
+            #cover{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 480px;
+                width: 640px;
+                background-color: aliceblue;
+            }
+
+
+        </style>
         <div  style="position: relative">
             <div class="parent">
                 <video id="video" onloadedmetadata="onPlay(this)"  style="position :absolute;  top: 0; "muted autoplay width="640" height="480"></video>
+                <div id="cover">カバー</div>
                 <canvas id="facecanvas" style="position :absolute;  top: 0; " width="640s" height="480"></canvas>
+                
             </div>
+            <h2>フレームが表示されるまで7~8秒かかります。</h2>
+            <input type="button" value="カメラ表示" id="button1"
+            onclick="document.getElementById('cover').style.visibility = 'visible';">
+            <input type="button" value="カメラ非表示" id="button2"
+            onclick="document.getElementById('cover').style.visibility = 'hidden';">
+            <style>
+                #button1{
+                    margin: 100px 0;
+                    position: absolute;
+                    top: 400px;
+                    left: 400px;
+                }
+                #button2{
+                    margin: 100px 0;
+                    position: absolute;
+                    top: 400px;
+                    left: 500px;
+                }
+            </style>
         </div>
         <script>
 	const canvas = document.getElementById( 'facecanvas' );
@@ -25,12 +57,11 @@
 	const inputSize = 224;
 	const scoreThreshold = 0.5;
 	const options = new faceapi.TinyFaceDetectorOptions({ inputSize, scoreThreshold });
-	    
 	async function onPlay()
 	{
             if(videoEl.paused || videoEl.ended || !faceapi.nets.tinyFaceDetector.params)
                 return setTimeout(() => onPlay())
-	    
+
             const result = await faceapi.detectSingleFace(videoEl, options).withFaceLandmarks()
             if (result) {
                 const dims = faceapi.matchDimensions(canvas, videoEl, true)
@@ -56,4 +87,4 @@
     </body>
 </html>
 <!-- cd js_3d_face/ をして　python3 -m http.server 8000 をした後　http://localhost:8000/face-api-sample.html -->
-<!-- 次回の俺へ　31133~31140にDrawFaceLandmarks -->
+<!-- face-api.min.jsの31063・31064でワイヤーフレームの色及びモード（線表示・ポイント表示）切り替えが可能 -->
