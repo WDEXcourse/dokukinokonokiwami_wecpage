@@ -69,7 +69,7 @@ button {
 .cover {
     visibility: visible;   /* 表示 */
 }
-.h2{
+h2{
     color: aliceblue;
     text-align: center;
     position: absolute;
@@ -87,3 +87,30 @@ button {
     width:640px;
     height: 480px;
 } */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.btn--orange,
+a.btn--orange {
+    color: #fff;
+    background-color: #eb6100;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+    color: #fff;
+    background: #f56500;
+}
+
+a.btn--radius {
+    border-radius: 100vh;
+}

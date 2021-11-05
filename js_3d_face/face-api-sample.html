@@ -21,9 +21,10 @@
                 width: 640px;
                 background-color: aliceblue;
             }
-
-
         </style>
+
+<a href="" class="btn">push</a>
+
         <div  style="position: relative">
             <div class="parent">
                 <video id="video" onloadedmetadata="onPlay(this)"  style="position :absolute;  top: 0; "muted autoplay width="640" height="480"></video>
@@ -32,9 +33,10 @@
                 
             </div>
             <h2>フレームが表示されるまで7~8秒かかります。</h2>
-            <input type="button" value="カメラ表示" id="button1"
+            <input type="button" value="カメラ非表示" id="button1"style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'"
             onclick="document.getElementById('cover').style.visibility = 'visible';">
-            <input type="button" value="カメラ非表示" id="button2"
+            <a href="" class="btn btn--orange btn--radius">PUSH</a>
+            <input type="button" value="カメラ表示" id="button2"style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'"
             onclick="document.getElementById('cover').style.visibility = 'hidden';">
             <style>
                 #button1{
