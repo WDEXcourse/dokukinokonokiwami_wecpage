@@ -70,12 +70,28 @@ button {
     visibility: visible;   /* 表示 */
 }
 h2{
-    color: aliceblue;
+    color: red;
     text-align: center;
     position: absolute;
-    top: 400px;
-    left: 400px;
+    top: 550px;
+    left: 450px;
 }
+.box{
+    text-align: center;
+    position: absolute;
+    
+    top: 500px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.box select{
+    border: 1px solid;
+    font-size: 20px;
+    width: 80px;
+    }
 /* #video{
     margin:0 auto; 
     width:100%
@@ -87,30 +103,3 @@ h2{
     width:640px;
     height: 480px;
 } */
-*,
-*:before,
-*:after {
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit;
-}
-
-html {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    font-size: 62.5%;/*rem算出をしやすくするために*/
-}
-
-.btn--orange,
-a.btn--orange {
-    color: #fff;
-    background-color: #eb6100;
-}
-.btn--orange:hover,
-a.btn--orange:hover {
-    color: #fff;
-    background: #f56500;
-}
-
-a.btn--radius {
-    border-radius: 100vh;
-}

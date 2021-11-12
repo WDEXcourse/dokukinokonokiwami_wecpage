@@ -5,12 +5,27 @@
         <script src="./lib/face-api.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <link rel="stylesheet" href="./facecss/face.css">
+
+        <script type="text/javascript">
+            function changeColor(){
+                var options = document.box.mySelect.options;
+                var Idx =document.box.mySelect.selectIndex;
+                var mytext=options[Idx].text;
+                console.log("変わった");
+
+                if(mytext.index0f('色変更')!=-1){
+                    document.mybox.mySelect.style.color='blue';
+                    options[Idx].style.color='red';
+                    alert(options[Idx].style.color);
+                }
+            }
+
+        </script>
     </head>
     <body>
         <title>顔認識ワイヤーフレーム</title>
         <div class="moji">
             <h1>ワイヤーフレーム</h1>
-
         </div>
         <style>
             #cover{
@@ -22,22 +37,37 @@
                 background-color: aliceblue;
             }
         </style>
-
-<a href="" class="btn">push</a>
-
         <div  style="position: relative">
             <div class="parent">
                 <video id="video" onloadedmetadata="onPlay(this)"  style="position :absolute;  top: 0; "muted autoplay width="640" height="480"></video>
-                <div id="cover">カバー</div>
+                <div id="cover"></div>
                 <canvas id="facecanvas" style="position :absolute;  top: 0; " width="640s" height="480"></canvas>
                 
             </div>
             <h2>フレームが表示されるまで7~8秒かかります。</h2>
             <input type="button" value="カメラ非表示" id="button1"style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'"
             onclick="document.getElementById('cover').style.visibility = 'visible';">
-            <a href="" class="btn btn--orange btn--radius">PUSH</a>
             <input type="button" value="カメラ表示" id="button2"style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'"
             onclick="document.getElementById('cover').style.visibility = 'hidden';">
+            <label for="fruit">選択してください</label>
+            
+            <div class="box">
+                <select name="color" id="mySelect" onchange="changeColor()">
+                <option value="a">白</option>
+                <option value="b">緑</option>
+                <option value="c">青</option>
+                <option value="d">赤</option>
+                <option value="色変更">色変更</option>
+                <!-- <script language="javascript" type="text/javascript">
+                    function valueChange(){
+                    cover.color = '#ffffff';
+                    }
+                    let fruitSelect = document.getElementById('fruit');
+                    fruitSelect.options[2].selected = true;
+                    fruitSelect.addEventListener('change', valueChange);
+                </script> -->
+            </select>
+            </div>
             <style>
                 #button1{
                     margin: 100px 0;
@@ -52,6 +82,7 @@
                     left: 500px;
                 }
             </style>
+            <h2>フレームが表示されるまで7~8秒かかります。</h2>
         </div>
         <script>
 	const canvas = document.getElementById( 'facecanvas' );
