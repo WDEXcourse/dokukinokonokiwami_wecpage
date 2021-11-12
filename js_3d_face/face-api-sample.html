@@ -8,13 +8,13 @@
 
         <script type="text/javascript">
             function changeColor(){
-                var options = document.box.mySelect.options;
-                var Idx =document.box.mySelect.selectIndex;
+                var options = document.box.color.options;
+                var Idx =document.box.color.selectIndex;
                 var mytext=options[Idx].text;
                 console.log("変わった");
 
                 if(mytext.index0f('色変更')!=-1){
-                    document.mybox.mySelect.style.color='blue';
+                    document.box.color.style.color='blue';
                     options[Idx].style.color='red';
                     alert(options[Idx].style.color);
                 }
@@ -51,7 +51,7 @@
             onclick="document.getElementById('cover').style.visibility = 'hidden';">
             <label for="fruit">選択してください</label>
             
-            <div class="box">
+            <form name="box">
                 <select name="color" id="mySelect" onchange="changeColor()">
                 <option value="a">白</option>
                 <option value="b">緑</option>
@@ -67,7 +67,7 @@
                     fruitSelect.addEventListener('change', valueChange);
                 </script> -->
             </select>
-            </div>
+            </form>
             <style>
                 #button1{
                     margin: 100px 0;
