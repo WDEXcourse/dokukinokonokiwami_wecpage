@@ -9,14 +9,19 @@
         <script type="text/javascript">
             function changeColor(){
                 var options = document.box.color.options;
-                var Idx =document.box.color.selectIndex;
+                var Idx = document.box.color.selectedIndex;
+                console.log(document.box.color.selectedIndex);
                 var mytext=options[Idx].text;
                 console.log("変わった");
+                var selectedIndex=document.box.color.selectedIndex;
+                console.log(selectedIndex);
 
-                if(mytext.index0f('色変更')!=-1){
-                    document.box.color.style.color='blue';
-                    options[Idx].style.color='red';
-                    alert(options[Idx].style.color);
+                if(selectedIndex==0){
+                    var sample_id = document.getElementById("cover");
+                    console.log(sample_id);
+                    document.write(cover); // console.log(sample_id);
+                    documents.getElementById('cover').style.backgroundColor = 'aliceblue';
+                    
                 }
             }
 
