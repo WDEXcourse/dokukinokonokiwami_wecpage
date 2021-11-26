@@ -18,22 +18,31 @@
 
                 if(selectedIndex==0){
                     var sample_id = document.getElementById("cover");
-                    sample_id.style.backgroundColor = 'aliceblue';   
+                    sample_id.style.backgroundColor = 'aliceblue';  
+                    this.lineColor = "rgba(0, 148, 30, 1)";
+                    this.pointColor = "rgba(0, 148, 30, 1)";
                 }
                 if(selectedIndex==1){
                     var sample_id = document.getElementById("cover");
                     // console.log(sample_id);
                     // document.write(cover); // console.log(sample_id);
                     sample_id.style.backgroundColor = '#b9c42f';
+                    changeFaceLine("rgba(0, 0, 0, 1)");
+                    this.lineColor = "rgba(0, 0, 0, 1)";
+                    this.pointColor = "rgba(0, 0, 0, 1)";
                     
                 }
                 if(selectedIndex==2){
                     var sample_id = document.getElementById("cover");
                     sample_id.style.backgroundColor = 'blue';   
+                    this.lineColor = "rgba(0, 0, 0, 1)";
+                    this.pointColor = "rgba(0, 0, 0, 1)";
                 }
                 if(selectedIndex==3){
                     var sample_id = document.getElementById("cover");
                     sample_id.style.backgroundColor = 'red';   
+                    this.lineColor =  "rgba(0, 0, 0, 1)";
+                    this.pointColor = "rgba(0, 0, 0, 1)";
                 }
             }
 
@@ -66,20 +75,21 @@
             onclick="document.getElementById('cover').style.visibility = 'visible';">
             <input type="button" value="カメラ表示" id="button2"style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'"
             onclick="document.getElementById('cover').style.visibility = 'hidden';">
-            <label for="fruit">選択してください</label>
+            
             
             <form name="box">
-                <select name="color" id="mySelect" onchange="changeColor()">
+                <select name="color" id="mySelect" style="top: 500px;position: absolute;left: 750px;height: 25px;width: 70px;"onchange="changeColor()">
                 <option value="a">白</option>
                 <option value="b">緑</option>
                 <option value="c">青</option>
                 <option value="d">赤</option>
+                <option selected>背景色</option>
                 <style>
-                    #mySelect{
-                        margin: 100px 0;
+                    .mySelect{
                         position: absolute;
-                        top: 400px;
-                        left: 650px;
+                        top: 550px;
+                        left: 7040px;
+
                     }
                 </style>
             </select>

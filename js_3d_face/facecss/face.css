@@ -40,13 +40,6 @@ body {
     text-align: center;
 }
 
-/* footer {
-    text-align: center;
-    margin: 300px auto;
-    font-size: 480px;
-    color: #181818;
-    background-color: #181818;
-} */
 
 .parent {
     position: absolute;
@@ -76,30 +69,10 @@ h2{
     top: 550px;
     left: 600px;
 }
-.box{
-    text-align: center;
+.mySelect{
     position: absolute;
-    
-    top: 500px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 550px;
 
 }
 
-.box select{
-    border: 1px solid;
-    font-size: 20px;
-    width: 80px;
-    }
-/* #video{
-    margin:0 auto; 
-    width:100%
-} */
 
-
-/* #facecanvas{
-    margin:0 auto; 
-    width:640px;
-    height: 480px;
-} */
