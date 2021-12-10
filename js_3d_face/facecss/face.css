@@ -40,11 +40,10 @@ body {
     text-align: center;
 }
 
-
 .parent {
     position: absolute;
     margin: 0 auto;
-    height: 480px;
+    height: 451px;
     width: 640px;
     top: 0;
     bottom: 0;
@@ -52,27 +51,28 @@ body {
     right: 0;
     background-color: #181818;
 }
+
 button {
     margin: 100px 0;
     position: absolute;
     top: 400px;
     left: 400px;
-    
 }
+
 .cover {
-    visibility: visible;   /* 表示 */
+    visibility: visible;
+    /* 表示 */
 }
-h2{
+
+h2 {
     color: red;
     text-align: center;
     position: absolute;
     top: 550px;
     left: 490px;
 }
-.mySelect{
+
+.mySelect {
     position: absolute;
     top: 550px;
-
 }
-
-
