@@ -20,6 +20,9 @@
             if (selectedIndex == 0) {
                 var sample_id = document.getElementById("cover");
                 sample_id.style.backgroundColor = 'aliceblue';
+                $(function() {
+                    $('#gazou img').attr('src', 'images/siro.jpg');
+                });
                 changeFaceLine("rgba(0, 148, 30, 1)");
                 this.lineColor = "rgba(0, 148, 30, 1)";
                 this.pointColor = "rgba(0, 148, 30, 1)";
@@ -29,6 +32,9 @@
                 // console.log(sample_id);
                 // document.write(cover); // console.log(sample_id);
                 sample_id.style.backgroundColor = '#b9c42f';
+                $(function() {
+                    $('#gazou img').attr('src', 'images/midori.jpg');
+                });
                 changeFaceLine("rgba(0, 0, 0, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
@@ -37,6 +43,9 @@
             if (selectedIndex == 2) {
                 var sample_id = document.getElementById("cover");
                 sample_id.style.backgroundColor = 'blue';
+                $(function() {
+                    $('#gazou img').attr('src', 'images/ao.jpg');
+                });
                 changeFaceLine("rgba(255, 255, 255, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
@@ -44,6 +53,9 @@
             if (selectedIndex == 3) {
                 var sample_id = document.getElementById("cover");
                 sample_id.style.backgroundColor = 'red';
+                $(function() {
+                    $('#gazou img').attr('src', 'images/aka.jpg');
+                });
                 changeFaceLine("rgba(255, 255, 255, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
@@ -100,7 +112,7 @@
         <h1>ワイヤーフレーム</h1>
     </div>
     <style>
-        #cover {
+        /* #cover {
             background-color: aliceblue;
             position: absolute;
             top: 0px;
@@ -109,13 +121,13 @@
             width: 640px;
             background-repeat: no-repeat;
             object-fit: cover;
-        }
+        } */
         
         #gazou {
             position: absolute;
             top: 0px;
             left: 0px;
-            height: 500px;
+            height: 451px;
             width: 640px;
             background-repeat: no-repeat;
             object-fit: cover;
@@ -126,7 +138,7 @@
             <video id="video" onloadedmetadata="onPlay(this)" style="position :absolute;  top: 0; " muted autoplay width="640" height="451"></video>
             <div id="cover"></div>
             <div id="gazou">
-                <img src="images/feedback_sheet/nice_design.png" id="nice">
+                <img src="images/siro.jpg" id="nice">
             </div>
 
             <!-- <img src="../js_3d_face/images/tomato.jpg" width="640" height="480"> -->
@@ -134,9 +146,8 @@
 
         </div>
         <h2>フレームが表示されるまで7~8秒かかります。</h2>
-        <input type="button" value="カメラ非表示" id="button1" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('cover').style.visibility = 'visible';">
-        <input type="button" value="カメラ表示" id="button2" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('cover').style.visibility = 'hidden';">
-
+        <input type="button" value="カメラ非表示" id="button1" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'visible';">
+        <input type="button" value="カメラ表示" id="button2" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'hidden';">
 
         <form name="box">
             <select name="color" id="mySelect" style="top: 500px;position: absolute;left: 750px;height: 25px;width: 70px;" onchange="changeColor()">
@@ -217,3 +228,4 @@
 </html>
 <!-- cd js_3d_face/ をして　python3 -m http.server 8000 をした後　http://localhost:8000/face-api-sample.html -->
 <!-- face-api.min.jsの31063・31064でワイヤーフレームの色及びモード（線表示・ポイント表示）切り替えが可能 -->
+<!-- heroku メール kamotan.kamotan3@gmail.com パス Kamotan@1012 -->
