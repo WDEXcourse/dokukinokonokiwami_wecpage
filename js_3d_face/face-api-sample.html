@@ -6,8 +6,8 @@
     <script src="./lib/face-api.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link rel="stylesheet" href="./facecss/face.css">
-
     <script type="text/javascript">
+
         function changeColor() {
             var options = document.box.color.options;
             var Idx = document.box.color.selectedIndex;
@@ -66,7 +66,6 @@
                 $(function() {
                     $('#gazou img').attr('src', 'images/feedback_sheet/nice_design.png');
                 });
-
                 changeFaceLine("rgba(0, 0, 0, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
@@ -76,8 +75,6 @@
                 $(function() {
                     $('#gazou img').attr('src', 'images/feedback_sheet/nice_humor.png');
                 });
-
-
                 changeFaceLine("rgba(255, 255, 255, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
@@ -87,7 +84,6 @@
                 $(function() {
                     $('#gazou img').attr('src', 'images/feedback_sheet/nice_story.png');
                 });
-
                 changeFaceLine("rgba(0, 0, 0, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
@@ -97,7 +93,6 @@
                 $(function() {
                     $('#gazou img').attr('src', 'images/feedback_sheet/nice_techinique.png');
                 });
-
                 changeFaceLine("rgba(0, 0, 0, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
@@ -111,18 +106,8 @@
     <div class="moji">
         <h1>ワイヤーフレーム</h1>
     </div>
+
     <style>
-        /* #cover {
-            background-color: aliceblue;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 451px;
-            width: 640px;
-            background-repeat: no-repeat;
-            object-fit: cover;
-        } */
-        
         #gazou {
             position: absolute;
             top: 0px;
@@ -133,6 +118,7 @@
             object-fit: cover;
         }
     </style>
+
     <div style="position: relative">
         <div class="parent">
             <video id="video" onloadedmetadata="onPlay(this)" style="position :absolute;  top: 0; " muted autoplay width="640" height="451"></video>
@@ -150,7 +136,7 @@
         <input type="button" value="カメラ表示" id="button2" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'hidden';">
 
         <form name="box">
-            <select name="color" id="mySelect" style="top: 500px;position: absolute;left: 750px;height: 25px;width: 70px;" onchange="changeColor()">
+            <select name="color" id="mySelect" style="top: 500px;position: absolute;left: 750px;height: 25px;width: 90px;" onchange="changeColor()">
                 <option value="a">白</option>
                 <option value="b">緑</option>
                 <option value="c">青</option>
@@ -160,16 +146,17 @@
                 <option value="g">ストーリー</option>
                 <option value="h">テクニック</option>
                 <option selected>背景色</option>
+
                 <style>
                     .mySelect{
                         position: absolute;
                         top: 550px;
                         left: 7040px;
-
                     }
                 </style>
             </select>
         </form>
+
         <style>
             #button1 {
                 margin: 100px 0;
@@ -187,6 +174,7 @@
         </style>
         <h2>フレームが表示されるまで7~8秒かかります。</h2>
     </div>
+
     <script>
         const canvas = document.getElementById('facecanvas');
         const videoEl = document.getElementById('video');
@@ -199,7 +187,6 @@
         async function onPlay() {
             if (videoEl.paused || videoEl.ended || !faceapi.nets.tinyFaceDetector.params)
                 return setTimeout(() => onPlay())
-
             const result = await faceapi.detectSingleFace(videoEl, options).withFaceLandmarks()
             if (result) {
                 const dims = faceapi.matchDimensions(canvas, videoEl, true)
