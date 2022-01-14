@@ -132,11 +132,11 @@
 
         </div>
         <h2>フレームが表示されるまで7~8秒かかります。</h2>
-        <input type="button" value="カメラ非表示" id="button1" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'visible';">
-        <input type="button" value="カメラ表示" id="button2" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'hidden';">
+        <!-- <input type="button" value="カメラ非表示" id="button1" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'visible';">
+        <input type="button" value="カメラ表示" id="button2" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'hidden';"> -->
 
         <form name="box">
-            <select name="color" id="mySelect" style="top: 500px;position: absolute;left: 750px;height: 25px;width: 90px;" onchange="changeColor()">
+            <select name="color" id="mySelect" style="top: 500px;position: absolute;left: 600px;height: 25px;width: 90px;" onchange="changeColor()">
                 <option value="a">白</option>
                 <option value="b">緑</option>
                 <option value="c">青</option>
@@ -151,28 +151,92 @@
                     .mySelect{
                         position: absolute;
                         top: 550px;
-                        left: 7040px;
+                        left: 640px;
                     }
                 </style>
             </select>
         </form>
 
         <style>
-            #button1 {
+            #label_camera {
                 margin: 100px 0;
                 position: absolute;
                 top: 400px;
-                left: 550px;
+                left: 400px;
+            }
+            #label_waku {
+                margin: 100px 0;
+                position: absolute;
+                top: 400px;
+                left: 460px;
+            }
+            #label_face {
+                margin: 100px 0;
+                position: absolute;
+                top: 400px;
+                left: 520px;
             }
             
-            #button2 {
-                margin: 100px 0;
-                position: absolute;
-                top: 400px;
-                left: 650px;
-            }
         </style>
         <h2>フレームが表示されるまで7~8秒かかります。</h2>
+        <div>
+            <label class="switch__label" id="label_camera">
+                <input type="checkbox" class="switch__input" value="Click" id="check_camera" onclick="camera()">
+                <span class="switch__content"></span>
+                <span class="switch__circle"></span>
+                
+            </label>
+            <script>
+                function camera () {
+                    console.log("1");
+                if(document.getElementById('check_camera').checked){
+                    console.log("2")
+                    $("#gazou").hide();
+                } else {
+                    console.log("3")
+                    $("#gazou").show();
+                }
+            }
+                
+            </script>
+            <label class="switch__label" id="label_waku">
+                <input type="checkbox" class="switch__input" value="Click" id="check_waku" onclick="waku()">
+                <span class="switch__content"></span>
+                <span class="switch__circle"></span>
+                
+            </label>
+            <script>
+                function waku () {
+                    console.log("4");
+                if(document.getElementById('check_waku').checked){
+                    console.log("5")
+                    $("faceapi.draw.drawDetections").hide();
+                } else {
+                    console.log("6")
+                    $("faceapi.draw.drawDetections").show();
+                }
+            }
+            </script>
+            <label class="switch__label" id="label_face">
+                <input type="checkbox" class="switch__input" value="Click" id="check_face" onclick="face()">
+                <span class="switch__content"></span>
+                <span class="switch__circle"></span>
+                
+            </label>
+            <script>
+                function face () {
+                    console.log("7");
+                if(document.getElementById('check_face').checked){
+                    console.log("8")
+                    $("").hide();
+                } else {
+                    console.log("9")
+                    $("").show();
+                }
+            }
+            </script>
+            
+        </div>
     </div>
 
     <script>
@@ -191,7 +255,7 @@
             if (result) {
                 const dims = faceapi.matchDimensions(canvas, videoEl, true)
                 const resizedResult = faceapi.resizeResults(result, dims)
-                    // faceapi.draw.drawDetections(canvas, resizedResult)//枠
+                faceapi.draw.drawDetections(canvas, resizedResult)//枠
                 faceapi.draw.drawFaceLandmarks(canvas, resizedResult) //顔のワイヤーフレーム
             }
             setTimeout(() => onPlay())
