@@ -7,6 +7,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link rel="stylesheet" href="./facecss/face.css">
     <script type="text/javascript">
+        var waku_hyouji = true;
+        var face_hyouji = true;
 
         function changeColor() {
             var options = document.box.color.options;
@@ -24,6 +26,7 @@
                     $('#gazou img').attr('src', 'images/siro.jpg');
                 });
                 changeFaceLine("rgba(0, 148, 30, 1)");
+                changeBoxColor("rgba(0, 0, 255, 1)");
                 this.lineColor = "rgba(0, 148, 30, 1)";
                 this.pointColor = "rgba(0, 148, 30, 1)";
             }
@@ -36,6 +39,7 @@
                     $('#gazou img').attr('src', 'images/midori.jpg');
                 });
                 changeFaceLine("rgba(0, 0, 0, 1)");
+                changeBoxColor("rgba(0, 0, 255, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
 
@@ -47,8 +51,10 @@
                     $('#gazou img').attr('src', 'images/ao.jpg');
                 });
                 changeFaceLine("rgba(255, 255, 255, 1)");
+                changeBoxColor("rgba(255, 0, 0, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
+                this.boxcolor = "rgba(255, 0, 0, 1)";
             }
             if (selectedIndex == 3) {
                 var sample_id = document.getElementById("cover");
@@ -57,6 +63,7 @@
                     $('#gazou img').attr('src', 'images/aka.jpg');
                 });
                 changeFaceLine("rgba(255, 255, 255, 1)");
+                changeBoxColor("rgba(0, 0, 255, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
             }
@@ -67,6 +74,7 @@
                     $('#gazou img').attr('src', 'images/feedback_sheet/nice_design.png');
                 });
                 changeFaceLine("rgba(0, 0, 0, 1)");
+                changeBoxColor("rgba(0, 0, 255, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
             }
@@ -75,7 +83,8 @@
                 $(function() {
                     $('#gazou img').attr('src', 'images/feedback_sheet/nice_humor.png');
                 });
-                changeFaceLine("rgba(255, 255, 255, 1)");
+                changeFaceLine("rgba(0, 148, 30, 1)");
+                changeBoxColor("rgba(0, 0, 255, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
             }
@@ -85,6 +94,7 @@
                     $('#gazou img').attr('src', 'images/feedback_sheet/nice_story.png');
                 });
                 changeFaceLine("rgba(0, 0, 0, 1)");
+                changeBoxColor("rgba(0, 0, 255, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
             }
@@ -94,6 +104,7 @@
                     $('#gazou img').attr('src', 'images/feedback_sheet/nice_techinique.png');
                 });
                 changeFaceLine("rgba(0, 0, 0, 1)");
+                changeBoxColor("rgba(255, 0, 0, 1)");
                 this.lineColor = "rgba(0, 0, 0, 1)";
                 this.pointColor = "rgba(0, 0, 0, 1)";
             }
@@ -119,6 +130,7 @@
         }
     </style>
 
+
     <div style="position: relative">
         <div class="parent">
             <video id="video" onloadedmetadata="onPlay(this)" style="position :absolute;  top: 0; " muted autoplay width="640" height="451"></video>
@@ -131,7 +143,8 @@
             <canvas id="facecanvas" style="position :absolute;  top: 0; " width="640" height="451"></canvas>
 
         </div>
-        <h2>フレームが表示されるまで7~8秒かかります。</h2>
+
+
         <!-- <input type="button" value="カメラ非表示" id="button1" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'visible';">
         <input type="button" value="カメラ表示" id="button2" style="background: color #fff;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#fff'" onclick="document.getElementById('gazou').style.visibility = 'hidden';"> -->
 
@@ -164,78 +177,92 @@
                 top: 400px;
                 left: 400px;
             }
+            
             #label_waku {
                 margin: 100px 0;
                 position: absolute;
                 top: 400px;
                 left: 460px;
             }
+            
             #label_face {
                 margin: 100px 0;
                 position: absolute;
                 top: 400px;
                 left: 520px;
             }
-            
         </style>
-        <h2>フレームが表示されるまで7~8秒かかります。</h2>
+        <h2>フレームが表示されるまで7〜8秒、<br>スイッチをON/OFFしたら変更が反映されるまで最大1〜2秒かかります。</h2>
+
+
         <div>
             <label class="switch__label" id="label_camera">
+                
                 <input type="checkbox" class="switch__input" value="Click" id="check_camera" onclick="camera()">
                 <span class="switch__content"></span>
                 <span class="switch__circle"></span>
+                <div id="camera_hyouji" style="color: red;text-align: center;position: absolute;top: -70px;left: 0px;">
+                    <h5>カメラ ON/OFF</h5>
+                </div>
+                
                 
             </label>
             <script>
-                function camera () {
+                function camera() {
                     console.log("1");
-                if(document.getElementById('check_camera').checked){
-                    console.log("2")
-                    $("#gazou").hide();
-                } else {
-                    console.log("3")
-                    $("#gazou").show();
+                    if (document.getElementById('check_camera').checked) {
+                        console.log("2")
+                        $("#gazou").hide();
+                    } else {
+                        console.log("3")
+                        $("#gazou").show();
+                    }
                 }
-            }
-                
             </script>
             <label class="switch__label" id="label_waku">
                 <input type="checkbox" class="switch__input" value="Click" id="check_waku" onclick="waku()">
                 <span class="switch__content"></span>
                 <span class="switch__circle"></span>
+                <div id="camera_hyouji" style="color: red;text-align: center;position: absolute;top: -70px;left: 0px;">
+                    <h5>枠ON/OFF</h5>
+                </div>
+                
                 
             </label>
             <script>
-                function waku () {
+                function waku() {
                     console.log("4");
-                if(document.getElementById('check_waku').checked){
-                    console.log("5")
-                    $("faceapi.draw.drawDetections").hide();
-                } else {
-                    console.log("6")
-                    $("faceapi.draw.drawDetections").show();
+                    if (document.getElementById('check_waku').checked) {
+                        console.log("5")
+                        waku_hyouji = false;
+                    } else {
+                        console.log("6")
+                        waku_hyouji = true;
+                    }
                 }
-            }
             </script>
             <label class="switch__label" id="label_face">
                 <input type="checkbox" class="switch__input" value="Click" id="check_face" onclick="face()">
                 <span class="switch__content"></span>
                 <span class="switch__circle"></span>
+                <div id="camera_hyouji" style="color: red;text-align: center;position: absolute;top: -70px;left: 0px;">
+                    <h5>モデルON/OFF</h5>
+                </div>
                 
             </label>
             <script>
-                function face () {
+                function face() {
                     console.log("7");
-                if(document.getElementById('check_face').checked){
-                    console.log("8")
-                    $("").hide();
-                } else {
-                    console.log("9")
-                    $("").show();
+                    if (document.getElementById('check_face').checked) {
+                        console.log("8")
+                        face_hyouji = false;
+                    } else {
+                        console.log("9")
+                        face_hyouji = true;
+                    }
                 }
-            }
             </script>
-            
+
         </div>
     </div>
 
@@ -255,8 +282,13 @@
             if (result) {
                 const dims = faceapi.matchDimensions(canvas, videoEl, true)
                 const resizedResult = faceapi.resizeResults(result, dims)
-                faceapi.draw.drawDetections(canvas, resizedResult)//枠
-                faceapi.draw.drawFaceLandmarks(canvas, resizedResult) //顔のワイヤーフレーム
+                if (waku_hyouji) {
+                    faceapi.draw.drawDetections(canvas, resizedResult) //枠
+                }
+                if (face_hyouji) {
+                    faceapi.draw.drawFaceLandmarks(canvas, resizedResult) //顔のワイヤーフレーム
+                }
+
             }
             setTimeout(() => onPlay())
         };
