@@ -10,3 +10,4 @@ fes
 サイトの説明
 ↓
 質問
+<!-- cd js_3d_face/ をして　python3 -m http.server 8000 をした後　http://localhost:8000/face-api-sample.html -->
