@@ -1,0 +1,39 @@
+from ast import IsNot
+import tweepy
+import codecs
+from discordwebhook import Discord
+import requests
+import sys
+from datetime import timedelta
+
+API_Key     = "4ALX3XYwDsApiAvoyvJUtFEu8"
+API_Sec     = "GQSLyeh492kXubsqEfkuiJg9cDKCVjTkkD9pBOX2f9fzhWgOxQ"
+Token       = "1158196317249658880-OIClyXSZO3bqniA3jCurYqbiumG7lK"
+Token_Sec   = "f2KkawjuYHUNBlLFn6jhTbtZ5t7nwD0ula27uzB1YMOOb"
+auth = tweepy.OAuthHandler(API_Key, API_Sec)
+auth.set_access_token(Token, Token_Sec)
+api = tweepy.API(auth,wait_on_rate_limit=True)
+
+Account = "@uma_musu"
+tweets = api.user_timeline(id=Account, count=1)
+
+for tweet in tweets:
+    f = open('tw_id.txt', 'r', encoding='UTF-8')
+    old_tw = f.read()
+    f.close()
+
+    tw = tweet.id
+    print(tw,file=codecs.open('new_tw.txt', 'w', 'utf-8'))
+    f = open('new_tw.txt', 'r', encoding='UTF-8')
+    new_tw = f.read()
+    f.close()
+
+    if old_tw == new_tw:
+        print(tw,file=codecs.open('new_tw.txt', 'w', 'utf-8'))
+    else:
+        print(tweet.id,file=codecs.open('tw_id.txt', 'w', 'utf-8'))
+        print(tw,file=codecs.open('new_tw.txt', 'w', 'utf-8'))
+        data = {"content":"ツイートを詳しく見たい方は下のURLからどうぞ。\n"+"https://twitter.com/{}/status/{}".format(tweet.user.screen_name,tweet.id)}
+
+        
+       
